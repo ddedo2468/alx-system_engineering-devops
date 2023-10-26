@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 #using if statement
 
-for(( i=0; i<=10; i++ ))
+counter=0
+
+while [ $counter -lt 10 ]
 do
-	if [ $i -eq 9 ]
+	if [ $counter -eq 9 ]
 	then
 		echo "Hi"
-	else
-		echo "Best School"
 	fi
+	echo "Best School"
+	(( counter++ ))
+	
 done
