@@ -19,3 +19,9 @@ package { 'Werkzeug':
   provider => 'pip3',
   require  => Package['python3-pip'],
 }
+
+exec { 'Fix URI.escape warning':
+  command     => 'sed -i "s/URI.escape/URI::DEFAULT_PARSER.escape/" /path/to/your/puppet/modules',
+  refreshonly => true,
+  subscribe   => Package['python3-pip'],
+}
