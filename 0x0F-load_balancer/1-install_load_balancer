@@ -4,15 +4,15 @@
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install -y haproxy
-file=/etc/haproxy/haproxy.cfg
+fName=/etc/haproxy/haproxy.cfg
 sudo echo -e "frontend haproxy-config
 \tbind *:80
 \tmode http
-\tdefault_backend backend-config" | sudo tee -a $file > /dev/null
+\tdefault_backend backend-config" | sudo tee -a $fName > /dev/null
 sudo echo -e "backend backend-config
 \tbalance roundrobin
 \toption httpclose
 \toption forwardfor
 \tserver 441211-web-01 100.26.254.92:80 check
-\tserver 441211-web-02 54.145.79.81:80 check" | sudo tee -a $file > /dev/null
+\tserver 441211-web-02 54.145.79.81:80 check" | sudo tee -a $fName > /dev/null
 sudo service haproxy restart
