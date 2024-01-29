@@ -24,8 +24,7 @@ if __name__ == "__main__":
         if task['completed']:
             total_tasks += 1
 
-    print(f"Employee {emp_name} is done with\
-          tasks({total_tasks}/{len(emp_todo)})")
+    print(f"Employee {emp_name} is done with tasks({total_tasks}/{len(emp_todo)}):")
 
     for line in emp_todo:
         if line['completed']:
