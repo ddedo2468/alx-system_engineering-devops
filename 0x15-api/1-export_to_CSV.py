@@ -4,10 +4,9 @@ get data from api for the given
 emp id the script should get the name
 and the completed task
 """
-
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == "__main__":
 
