@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" for the given emp_id should 
+""" for the given emp_id should
 export data in JSON format.
 """
 
