@@ -5,7 +5,7 @@ import requests
 
 def recurse(subreddit, hot_list=[], a=""):
     """ get titles recursively """
-    
+
     headers = {'User-Agent': 'MyPythonScript/1.0'}
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100&after={a}'
     request = requests.get(url=url, headers=headers, allow_redirects=False)
