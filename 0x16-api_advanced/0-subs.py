@@ -1,20 +1,16 @@
 #!/usr/bin/python3
-""" get subscribers"""
-
+""" git reddit subs for a subreddit """
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """Get subs number"""
+    """get the num"""
 
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    headers = {'User-Agent': 'AyaTarek95'}
-    res = requests.get(url, headers=headers)
+    headers = {'User-Agent': 'MyPythonScript/1.0'}
+    request = requests.get(
+        f"https://www.reddit.com/r/{subreddit}/about.json", headers=headers)
 
-    if res.status_code == 200:
-        data = res.json()
-        subscribers_num = data['data']['subscribers']
-        return subscribers_num
-
-    else:
-        return 0
+    if request.status_code == 200:
+        subscribers = request.json().get('data').get('subscribers')
+        return subscribers if subscribers else 0
+    return 0
